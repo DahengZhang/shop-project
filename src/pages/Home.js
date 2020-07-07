@@ -14,7 +14,7 @@ const maoDispatchToProps = (dispatch, props) => ({
 
 export default connect(maoStateToProps, maoDispatchToProps)(props => {
     const { add } = props
-    let [goodsList, setGoodsList] = useState([])
+    const [goodsList, setGoodsList] = useState([])
     useEffect(() => {
         axios.get('/goods.json').then(res => {
             const { data: { data: list } } = res

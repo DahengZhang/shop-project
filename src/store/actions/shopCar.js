@@ -14,3 +14,13 @@ export const DelGoods = (value) => {
         value
     }
 }
+
+export const AsyncAddGoods = (value) => {
+    return dispatch => {
+        return new Promise(() => {
+            setTimeout(() => {
+                dispatch(AddGoods(value))
+            }, 1000)
+        })
+    }
+}
